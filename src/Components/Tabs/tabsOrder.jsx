@@ -77,7 +77,7 @@ const tabsOrder = () => {
           >
             {data &&
               data.map((item, index) => (
-                <Tab eventKey={item.id} title={`Order ${index + 1}`}>
+                <Tab eventKey={item.id} title={item.order_no}>
                   <div className="card" style={{ width: "58rem" }}>
                     <div className="row">
                       <div className="d-flex mb-2">

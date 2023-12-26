@@ -24,17 +24,8 @@ const tableOrder = () => {
       .catch((err) => console.log(err));
   };
 
-  const handleToggleStatus = (id, status) => {
+  const handleUpdateStatus = (id, newStatus) => {
     setLoading(true);
-
-    let newStatus;
-    if (status === 0) {
-      newStatus = 1;
-    } else if (status === 1) {
-      newStatus = 4;
-    } else if (status === 4) {
-      newStatus = 0;
-    }
 
     axios
       .patch(
@@ -91,12 +82,40 @@ const tableOrder = () => {
               <td>{item.status}</td>
               <td>{item.payment.code}</td>
               <td>
-                <button
-                    onClick={() => handleToggleStatus(item.id, item.status)}
-                    disabled={loading}
+                <div className="btn-group">
+                  <button
+                    type="button"
+                    className="btn btn-primary dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                    Toggle Status
+                    Pilih Status
                   </button>
+                  <div className="dropdown-menu">
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleUpdateStatus(item.id, 0)}
+                      disabled={loading}
+                    >
+                      Cancel Paid
+                    </button>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleUpdateStatus(item.id, 1)}
+                      disabled={loading}
+                    >
+                      Paid
+                    </button>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleUpdateStatus(item.id, 4)}
+                      disabled={loading}
+                    >
+                      Done
+                    </button>
+                  </div>
+                </div>
               </td>
             </tr>
           ))}
