@@ -1,0 +1,21 @@
+.mode.dark {
+    background-color: #2e2c2c;
+    color: white;
+}
+
+@media screen and (min-width: 1080px) {
+    .iframe {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1079px) {
+    .iframe {
+        width: 700px;
+    }
+}
+@media screen and (max-width: 884px) {
+    .iframe {
+        width: 500px;
+    }
+}
