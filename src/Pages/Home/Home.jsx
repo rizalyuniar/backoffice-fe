@@ -22,7 +22,7 @@ const Home = () => {
                   <div className="row px-1">
 
                     <Tabs />
-                    <Table />
+                    {/* <Table /> */}
 
                   </div>
                 </div>
