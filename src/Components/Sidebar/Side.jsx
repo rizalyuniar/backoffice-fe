@@ -14,7 +14,7 @@ const Side = () => {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/threat">
+        <Link className="nav-link" to="/order">
           <span>Order</span>
         </Link>
       </li>

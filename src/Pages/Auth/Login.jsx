@@ -43,6 +43,7 @@ const Login = () => {
         // console.log(token);
 
         localStorage.setItem("token", token);
+        localStorage.setItem("refresh_token", refresh_token);
         // localStorage.setItem("id", id);
         // localStorage.setItem("username", username);
         // localStorage.setItem("role", role);
@@ -64,11 +65,7 @@ const Login = () => {
   };
 
   return (
-    <div style={{
-      position: "absolute",
-      right: "35%",
-      top: "15%"
-    }}>
+    <div>
       <div
         className={`card shadow ${style.card}`}
         style={{
